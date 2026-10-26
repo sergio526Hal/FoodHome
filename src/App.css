@@ -10,7 +10,7 @@ body {
   margin: 0;
   background: #f3e7db;
   color: #5f2f2d;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
   min-height: 100vh;
 }
 
@@ -101,7 +101,7 @@ img {
   font-weight: 900;
   font-size: 2rem;
   letter-spacing: -0.06em;
-  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
 }
 
 .brand-title {
@@ -341,7 +341,7 @@ img {
   top: 36px;
   right: 30px;
   transform: rotate(-8deg);
-  font-family: 'Comic Sans MS', 'Segoe Print', cursive;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
   font-size: clamp(1.4rem, 2vw, 2.1rem);
   color: #7a1d31;
   font-weight: 700;
@@ -428,7 +428,7 @@ img {
 }
 
 .section-script {
-  font-family: 'Comic Sans MS', 'Segoe Print', cursive;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
   font-size: clamp(1.4rem, 2vw, 2rem);
   color: #7a1d31;
   transform: rotate(-8deg);
@@ -715,7 +715,7 @@ h2,
 h3,
 h4 {
   margin: 0;
-  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
   letter-spacing: -0.04em;
   color: #4d1d1d;
 }
@@ -729,7 +729,7 @@ h1 {
 .script {
   position: relative;
   display: inline-block;
-  font-family: 'Comic Sans MS', 'Segoe Print', cursive;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
   font-weight: 700;
   color: #c95a38;
   font-style: italic;
@@ -826,7 +826,7 @@ h1 {
   top: 12%;
   right: 8%;
   transform: rotate(-12deg);
-  font-family: 'Comic Sans MS', 'Segoe Print', cursive;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
   font-size: clamp(1.4rem, 2.1vw, 2.2rem);
   color: #7a1d31;
   font-weight: 700;
