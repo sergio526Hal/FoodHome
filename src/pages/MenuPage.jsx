@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import {
     ArrowRight,
     BadgeCheck,
@@ -56,30 +57,35 @@ const products = [
     {
         name: 'Poulet braisé',
         price: '12 000 Ar',
+        category: 'Repas',
         image:
             'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80',
     },
     {
         name: 'Poisson grillé',
         price: '14 000 Ar',
+        category: 'Repas',
         image:
             'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=900&q=80',
     },
     {
         name: 'Riz sauté aux légumes',
         price: '10 000 Ar',
+        category: 'Repas',
         image:
-            'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80',
+            'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=80',
     },
     {
         name: 'Burger maison',
         price: '8 000 Ar',
+        category: 'Goûters',
         image:
             'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80',
     },
     {
         name: 'Salade fraicheur',
         price: '7 000 Ar',
+        category: 'Boissons',
         image:
             'https://images.unsplash.com/photo-1546793665-c74683f339c1?auto=format&fit=crop&w=900&q=80',
     },
@@ -110,6 +116,13 @@ const testimonials = [
 ]
 
 export function MenuPage({ currentPage = 'accueil', onNavigate }) {
+    const [activeCategory, setActiveCategory] = useState('Tous')
+
+    const filteredProducts =
+        activeCategory === 'Tous'
+            ? products
+            : products.filter((product) => product.category === activeCategory)
+
     return (
         <div className="page-shell">
             <header className="topbar">
@@ -247,11 +260,12 @@ export function MenuPage({ currentPage = 'accueil', onNavigate }) {
                     </div>
 
                     <div className="menu-tabs">
-                        {menuTabs.map(({ label, icon: Icon }, index) => (
+                        {menuTabs.map(({ label, icon: Icon }) => (
                             <button
                                 key={label}
                                 type="button"
-                                className={index === 0 ? 'tab active' : 'tab'}
+                                className={activeCategory === label ? 'tab active' : 'tab'}
+                                onClick={() => setActiveCategory(label)}
                             >
                                 <Icon size={16} className="icon" />
                                 {label}
@@ -264,7 +278,7 @@ export function MenuPage({ currentPage = 'accueil', onNavigate }) {
                     </div>
 
                     <div className="product-grid">
-                        {products.map((product) => (
+                        {filteredProducts.map((product) => (
                             <article key={product.name} className="food-card">
                                 <div className="food-image-box">
                                     <img src={product.image} alt={product.name} />

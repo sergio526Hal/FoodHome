@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import {
     ArrowRight,
     BadgeCheck,
@@ -24,6 +25,8 @@ const relatedProducts = [
 ]
 
 export function ProductPage({ currentPage = 'product', onNavigate }) {
+    const [quantity, setQuantity] = useState(1)
+
     const navItems = [
         { value: 'accueil', label: 'Accueil', icon: UtensilsCrossed },
         { value: 'menu', label: 'Menu', icon: UtensilsCrossed },
@@ -31,6 +34,10 @@ export function ProductPage({ currentPage = 'product', onNavigate }) {
         { value: 'avis', label: 'Avis', icon: UtensilsCrossed },
         { value: 'contact', label: 'Contact', icon: UtensilsCrossed },
     ]
+
+    const handleDecrease = () => setQuantity((prev) => Math.max(1, prev - 1))
+    const handleIncrease = () => setQuantity((prev) => prev + 1)
+    const handleAddToCart = () => onNavigate('commande')
 
     return (
         <div className="page-shell page-shell-product">
@@ -65,7 +72,7 @@ export function ProductPage({ currentPage = 'product', onNavigate }) {
                         <Phone size={16} className="icon" />
                         Connexion
                     </button>
-                    <button type="button" className="primary-btn">
+                    <button type="button" className="primary-btn" onClick={() => onNavigate('commande')}>
                         <ShoppingCart size={16} className="icon" />
                         Commander
                     </button>
@@ -123,11 +130,11 @@ export function ProductPage({ currentPage = 'product', onNavigate }) {
                         <div className="quantity-box">
                             <span>Quantité</span>
                             <div className="quantity-controls">
-                                <button type="button" aria-label="moins"><Minus size={16} /></button>
-                                <strong>1</strong>
-                                <button type="button" aria-label="plus"><Plus size={16} /></button>
+                                <button type="button" aria-label="moins" onClick={handleDecrease}><Minus size={16} /></button>
+                                <strong>{quantity}</strong>
+                                <button type="button" aria-label="plus" onClick={handleIncrease}><Plus size={16} /></button>
                             </div>
-                            <button type="button" className="primary-btn add-btn">
+                            <button type="button" className="primary-btn add-btn" onClick={handleAddToCart}>
                                 <ShoppingCart size={16} className="icon" />
                                 Ajouter au panier
                             </button>
