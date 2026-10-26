@@ -2,6 +2,7 @@ import { useState } from 'react'
 import {
     ArrowRight,
     BadgeCheck,
+    BarChart3,
     CakeSlice,
     Check,
     Clock3,
@@ -31,6 +32,7 @@ const navItems = [
     { value: 'a-propos', label: 'À propos', icon: Sparkles },
     { value: 'avis', label: 'Avis', icon: Star },
     { value: 'contact', label: 'Contact', icon: Phone },
+    { value: 'dashboard', label: 'Dashboard', icon: BarChart3 },
 ]
 
 const featurePills = [
@@ -156,9 +158,9 @@ export function MenuPage({ currentPage = 'accueil', onNavigate }) {
                         <UserRound size={16} className="icon" />
                         Connexion
                     </button>
-                    <button type="button" className="primary-btn">
-                        <ShoppingCart size={16} className="icon" />
-                        Commander
+                    <button type="button" className="primary-btn" onClick={() => onNavigate('dashboard')}>
+                        <BarChart3 size={16} className="icon" />
+                        Tableau de bord
                     </button>
                 </div>
             </header>

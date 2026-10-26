@@ -6,9 +6,14 @@ import { ProductPage } from './pages/ProductPage'
 import { ReviewsPage } from './pages/ReviewsPage'
 import { ContactPage } from './pages/ContactPage'
 import { OrderPage } from './pages/OrderPage'
+import { AdminDashboardPage } from './pages/AdminDashboardPage'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('accueil')
+
+  if (currentPage === 'dashboard') {
+    return <AdminDashboardPage currentPage={currentPage} onNavigate={setCurrentPage} />
+  }
 
   if (currentPage === 'a-propos') {
     return <AboutPage currentPage={currentPage} onNavigate={setCurrentPage} />

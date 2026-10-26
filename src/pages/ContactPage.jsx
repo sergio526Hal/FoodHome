@@ -1,15 +1,12 @@
 import {
     ArrowRight,
     Clock3,
-    Facebook,
-    Instagram,
     Mail,
     MapPin,
     MessageSquareText,
     Phone,
     Send,
     Sparkles,
-    X,
 } from 'lucide-react'
 
 export function ContactPage({ currentPage, onNavigate }) {
@@ -143,9 +140,9 @@ export function ContactPage({ currentPage, onNavigate }) {
                                 <div>
                                     <strong>Réseaux sociaux</strong>
                                     <div className="social-icons">
-                                        <button type="button" aria-label="Facebook"><Facebook size={16} /></button>
-                                        <button type="button" aria-label="Instagram"><Instagram size={16} /></button>
-                                        <button type="button" aria-label="X"><X size={16} /></button>
+                                        <button type="button" aria-label="Facebook">f</button>
+                                        <button type="button" aria-label="Instagram">◎</button>
+                                        <button type="button" aria-label="X">x</button>
                                     </div>
                                 </div>
                                 <ArrowRight size={18} className="chevron" />
